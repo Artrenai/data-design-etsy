@@ -126,7 +126,7 @@
 			<li>cover photo for page</li>
 
 		</ol>
-		not committing
+		test
 
 
 
