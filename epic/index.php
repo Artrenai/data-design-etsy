@@ -173,11 +173,9 @@
 		</table>
 		<h3><strong>Relation</strong></h3>
 		<ul>
-			<li>
-			one profile per account
-			many Items per profile
-			10 photos per Item
-			</li>
+			<li>one profile per account</li>
+			<li>many Items per profile</li>
+			<li>10 photos per Item</li>
 		</ul>
 
 
