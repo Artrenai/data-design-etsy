@@ -120,13 +120,70 @@
 		</ol>
 		<p>Creating Profile</p>
 		<ol>
-			<li>she has three places to upload photos for her buisness identity</li>
+			<li>she has three places to upload photos for her buisness identity
 			<li>Main page profile photo</li>
 			<li>company owner photo </li>
 			<li>cover photo for page</li>
-
+		</li>
 		</ol>
-		test
+		<table>
+			<thead>
+				<th>Profile</th>
+				<th>Item</th>
+
+			</thead>
+			<tr>
+				<td>ownerName</td>
+				<td>itemPhoto</td>
+			</tr>
+			<tr>
+				<td>ownerPassword</td>
+				<td>itemTags</td>
+			</tr>
+			<tr>
+				<td>userName</td>
+				<td>itemDescription</td>
+			</tr>
+			<tr>
+				<td>shopLanguage</td>
+				<td>itemMaterial</td>
+			</tr>
+			<tr>
+				<td>shopCountry</td>
+				<td>itemPrice</td>
+			</tr>
+			<tr>
+				<td>shopCurrancy</td>
+				<td>itemQuantity</td>
+			</tr>
+			<tr>
+				<td>shopName</td>
+				<td>itemShipping</td>
+			</tr>
+			<tr>
+			<td>profilePhoto</td>
+			</tr>
+			<tr>
+			<td>profileCover</td>
+			</tr>
+			<tr>
+			<td>ownerPhoto</td>
+			</tr>
+			</ul>
+		</table>
+		<h3><strong>Relation</strong></h3>
+		<ul>
+			<li>
+			one profile per account
+			many Items per profile
+			10 photos per Item
+			</li>
+		</ul>
+
+
+		</p>
+		</ol>
+
 
 
 
