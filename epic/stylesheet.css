@@ -1,0 +1,18 @@
+
+table{
+	border: 1px solid black;
+	text-align: left;
+}
+td{
+	border: 1px solid black;
+	padding-right: 10px;
+
+}
+thead{
+	background-color: black;
+	color: white;
+}
+img{
+	height: 50%;
+	width: 50%;
+}

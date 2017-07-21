@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="stylesheet.css" rel="stylesheet" type="text/css" />
 		<title>
 			Data-Design-JerushaLoops
 		</title>
@@ -126,62 +127,60 @@
 			<li>cover photo for page</li>
 		</li>
 		</ol>
+		<p>
+		<h2>Conceptual Model</h2>
+		</p>
 		<table>
 			<thead>
-				<th>Profile</th>
-				<th>Item</th>
-
+				<th>profile</th>
+				<th>profileShop</th>
+				<th>item</th>
 			</thead>
+
 			<tr>
-				<td>ownerName</td>
-				<td>itemPhoto</td>
+				<td>profileId</td>
+				<td>profileShopId</td>
+				<td>itemId</td>
 			</tr>
+
 			<tr>
-				<td>ownerPassword</td>
-				<td>itemTags</td>
+				<td>profileShop</td>
+				<td>profileShopName</td>
+				<td>ItemDescription</td>
 			</tr>
+
 			<tr>
-				<td>userName</td>
-				<td>itemDescription</td>
-			</tr>
-			<tr>
-				<td>shopLanguage</td>
-				<td>itemMaterial</td>
-			</tr>
-			<tr>
-				<td>shopCountry</td>
-				<td>itemPrice</td>
-			</tr>
-			<tr>
-				<td>shopCurrancy</td>
+				<td>profileUserName</td>
 				<td>itemQuantity</td>
+				<td>profileShopItem</td>
+			</tr>
+
+			<tr>
+				<td>profileSalt</td>
+				<td>profileShopStory</td>
+				<td>itemPrice</td>
+
 			</tr>
 			<tr>
-				<td>shopName</td>
-				<td>itemShipping</td>
+				<td>profileHash</td>
 			</tr>
-			<tr>
-			<td>profilePhoto</td>
-			</tr>
-			<tr>
-			<td>profileCover</td>
-			</tr>
-			<tr>
-			<td>ownerPhoto</td>
-			</tr>
-			</ul>
+
 		</table>
 		<h3><strong>Relation</strong></h3>
 		<ul>
 			<li>one profile per account</li>
-			<li>many Items per profile</li>
-			<li>10 photos per Item</li>
+			<li>one Shop pre profile</li>
+			<li>many Items per Shop</li>
 		</ul>
 
 
 		</p>
 		</ol>
 
+		<h2>Entity Relationship Model</h2>
+<p>
+	<img src="images/relationship-model.png"/>
+</p>
 
 
 
