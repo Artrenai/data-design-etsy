@@ -7,10 +7,9 @@
 		</title>
 
 	<body>
-
 		<h2>Persona</h2>
 		<p>
-		<ol >
+		<ol>
 			<li><strong>Purpose:</strong>To find a site to upload crafts for point of sale that easy to use and update</li>
 			<li><strong>Audience:</strong> A single mother and needs a personal website for her custome crochet items</li>
 			<li><strong>Goal:</strong>to streamline the conversation between her and her customer. Streamlining the process between Consultation, Quote and Payment.</li>
@@ -181,6 +180,7 @@
 <p>
 	<img src="images/relationship-model.png"/>
 </p>
+
 
 
 
