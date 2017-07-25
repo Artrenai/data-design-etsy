@@ -1,21 +1,20 @@
 <?php
 
-	class Profile {
-		private $profileId;
-		private $profileHash;
-		private $profileSalt;
-		private $profileUsername;
-		public function getProfileId() {
-			return ($this->profileId);
+	class Profile implements \JsonSerializable {
+					use ValidateDate;
+				private $profileId;
+				private $profileHash;
+				private $profileSalt;
+				private $profileUsername;
+				public function getProfileId() {
+				return ($this->profileId);
 		}
 
-	public function _construct(?int $newProfile, string $newProfileHash, string $newProfileSalt, string $profileUsername;){
+	public function _construct(?int $newProfileId, string $newProfileHash, string $newProfileSalt, string $newProfileUsername ){
 			try{
-
-	}
-	}
-	)
-	public function setProfileId($newProfileId){
-
-		}
-	}
+				$this->setProfileId($newProfileId);
+				$this->setProfileHash($newProfileHash);
+				$this->setProfileSalt($newProfileSalt);
+				$this->SetProfileUserName($newProfileUsername);
+			}
+			catch(\InvalidArgumentException|)
