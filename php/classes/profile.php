@@ -39,7 +39,14 @@
 
 		}
 
+		Class Item implements \JsonSerializable {
+			use ValidateDate;
+			private $itemId;
+			private $itemShopId;
+			private $itemDescription;
+			private $itemPrice;
 
+			public function __construct(?int $newItemId, int $itemShopId, string $itemDescription, float $itemPrice)
 
 
 
