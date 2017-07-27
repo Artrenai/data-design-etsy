@@ -22,7 +22,7 @@
 			}
 		}
 
-		public function getProfileId() {
+		public function getProfileId():int {
 			return ($this->profileId);
 		}
 
@@ -39,28 +39,52 @@
 
 
 		}
+	Class Shop implements \JsonSerializable{
+		use ValidateDate;
+		private $shopId;
+		private $shopEmail;
+		private $shopName;
+		private $shopProfileId;
 
-		Class Item implements \JsonSerializable {
+		public function __construct(?int newShopId, string newShopEmail, string newShopName, string newShopProfileId){
+			try{
+			$this->setShopId;
+			$this->setShopEmail;
+			$this->setShopName;
+			$this->setShopProfileId;
+			}
+			catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception){
+				$exceptionType = get_class($exception);
+				throw(new $exceptionType($exceptionType($exception->getMessage(), 0, $exception)));
+			}
+		}
+		public function getShowId(): int{
+			return ($this->shopId);
+		}
+	}
+
+	Class Item implements \JsonSerializable {
 			use ValidateDate;
 			private $itemId;
 			private $itemShopId;
 			private $itemDescription;
 			private $itemPrice;
 
-			public function __construct(?int $newItemId, int $itemShopId, string $itemDescription, float $itemPrice)
-				try{
-				$this->setItemId($newItemId);
-				$this->setItemShopId($newItemShopId);
-				$this->setItemDescription($newItemDescription);
-				$this->setItemPrice;($newItemPrice);
-				}
-				catch(\InvalidArgumentException | \RangeException | \Exception |\TypeError $exception){
-				$exceptionType = get_class($exception);
-				throw(new $exceptionType($exceptionType($exception->getMessage(), 0, $exception)));
+			public function __construct(?int $newItemId, int $newitemShopId, string $newitemDescription, float $newitemPrice) {
+				try {
+					$this->setItemId($newItemId);
+					$this->setItemShopId($newItemShopId);
+					$this->setItemDescription($newItemDescription);
+					$this->setItemPrice($newItemPrice);
+
+				} catch(\InvalidArgumentException | \RangeException | \Exception |\TypeError $exception) {
+					$exceptionType = get_class($exception);
+					throw(new $exceptionType($exceptionType($exception->getMessage(), 0, $exception)));
 
 				}
 			}
-			public function get ProfileId
+		}
+
 
 
 
