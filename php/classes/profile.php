@@ -33,7 +33,7 @@
 		 */
 		public function __construct(?int $newProfileId, string $newProfileHash, string $newProfileSalt, string $newProfileUsername) {
 			/**
-			 * trys varibles by putting them in place holders defined in construct magic method testing to see if they meet the coditions of the place holder assigned
+			 * tries varibles by putting them in place holders defined in construct magic method testing to see if they meet the coditions of the place holder assigned
 			 * to them
 			 */
 			try {
