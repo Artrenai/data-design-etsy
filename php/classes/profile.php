@@ -83,6 +83,31 @@
 			 */
 			$this->profileId = $newProfileId;
 		}
+		public function getProfileHash(): string{
+			return $this->profileHash;
+		}
+		public function setProfileHash(string $newProfileHash): void{
+			$newProfileHash = trim($newProfileHash);
+			$newProfileHash = strtolower($newProfileHash);
+			if(empty($newProfileHash)===true){
+				throw(new \InvalidArgumentException("profile password hash is empty"));
+			}
+			if(ctype_xdigit($newProfileHash)){
+				throw(new\InvalidArgumentException("profile hash is insecure"));
+			}
+			if(strlen($newProfileHash) !==128) {
+				throw(new \RangeException("profile must be 128 characters"));
+			}
+				$this->profileHash = $newProfileHash;
+
+		}
+
+		public function getProfileSalt(): string{
+			return $this->profileSalt;
+		}
+		public function getProfileUsername():string{
+			return $this->profileUsername;
+		}
 
 
 		}
@@ -128,10 +153,10 @@
 				throw(new $exceptionType($exceptionType($exception->getMessage(), 0, $exception)));
 			}
 		}
-		public function getShowId(): int{
+		public function getShopId(): int{
 			return ($this->shopId);
 		}
-		public function setShowId(?int $newShopId ):void {
+		public function setShopId(?int $newShopId ):void {
 			if ($newShopId === null){
 				$this->shopId = null;
 				return;
