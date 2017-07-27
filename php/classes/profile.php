@@ -47,6 +47,15 @@
 			private $itemPrice;
 
 			public function __construct(?int $newItemId, int $itemShopId, string $itemDescription, float $itemPrice)
+				try{
+				$this->setItemId($newItemId);
+				$this->setItemShopId($newItemShopId);
+				$this->setItemDescription($newItemDescription);
+				$this->setItemPrice;($newItemPrice);
+				}
+				catch(\)
+			}
+
 
 
 
