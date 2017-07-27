@@ -15,7 +15,8 @@
 				$this->setProfileHash($newProfileHash);
 				$this->setProfileSalt($newProfileSalt);
 				$this->setProfileUserName($newProfileUsername);
-			} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			}
+			catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
 				$exceptionType = get_class($exception);
 				throw(new $exceptionType($exceptionType($exception->getMessage(), 0, $exception)));
 			}
@@ -53,8 +54,13 @@
 				$this->setItemDescription($newItemDescription);
 				$this->setItemPrice;($newItemPrice);
 				}
-				catch(\)
+				catch(\InvalidArgumentException | \RangeException | \Exception |\TypeError $exception){
+				$exceptionType = get_class($exception);
+				throw(new $exceptionType($exceptionType($exception->getMessage(), 0, $exception)));
+
+				}
 			}
+			public function get ProfileId
 
 
 
