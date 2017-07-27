@@ -56,18 +56,31 @@
 			}
 		}
 
+		/**
+		 * this accessor calls/gets/grabs/accesses  varible 'profileId' by creating a function which @return int  profileId
+		 */
 		public function getProfileId():int {
 			return ($this->profileId);
 		}
 
+		/**
+		 * @param int|null $newProfileId this function test profile id to see if it has a null value if it does it assigns the varible to the
+		 * value "null"
+		 */
 		public function setProfileId(?int $newProfileId): void {
 			if($newProfileId === null) {
 				$this->profileId = null;
 				return;
 			}
+			/**
+			 * sets the range condition for the \RangeException returning a message
+			 */
 			if($newProfileId <= 0) {
 				throw(new \RangeException("this profile is not positive"));
 			}
+			/**
+			 * assigns value of if condition in mutator  to the profile id variable
+			 */
 			$this->profileId = $newProfileId;
 		}
 
@@ -75,10 +88,29 @@
 		}
 	Class Shop implements \JsonSerializable{
 		use ValidateDate;
+		/**
+		 * @var ShopId  is created giving it a classification of private
+		 */
 		private $shopId;
+		/**
+		 * @var shopEmail  is created giving it a classification of private
+		 */
 		private $shopEmail;
+		/**
+		 * @var shopName  is created giving it a classification of private
+		 */
 		private $shopName;
+		/**
+		 * @var shopProfileId  is created giving it a classification of private
+		 */
 		private $shopProfileId;
+		/**
+		 * Profile constructor.
+		 * @param int|null $newShopId place holder created with interger or null conditions
+		 * @param string $newShopEmail place holder created with integer conditions
+		 * @param string $newShopName place holder created with integer conditions
+		 * @param string $newShopProfileId place holder created with string conditions
+		 */
 
 		public function __construct(?int newShopId, string newShopEmail, string newShopName, string newShopProfileId){
 			try{
@@ -87,7 +119,11 @@
 			$this->setShopName;
 			$this->setShopProfileId;
 			}
+
 			catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception){
+				/**
+				 * assigns the name of the type of error that was caught to the variable, "exception Type"
+				 */
 				$exceptionType = get_class($exception);
 				throw(new $exceptionType($exceptionType($exception->getMessage(), 0, $exception)));
 			}
@@ -95,6 +131,17 @@
 		public function getShowId(): int{
 			return ($this->shopId);
 		}
+		public function setShowId(?int $newShopId ):void {
+			if ($newShopId === null){
+				$this->shopId = null;
+				return;
+				}
+			if ($newShopId <= 0){
+			throw(new \RangeException("this shop is not positve"));
+			}
+			$this->shopId = $newShopId;
+		}
+
 	}
 
 	Class Item implements \JsonSerializable {
@@ -118,9 +165,18 @@
 		}
 		public function getItemId(): int {
 		return ($this->itemId);
-					}
+			}
+		public function setItemId(?int $newItemId): void {
+			if ($newItemid === null){
+				$this->itemId = null;
+				return;
+		}
+		if($newItemId<=0 ){
+				throw(new \RangeException("this item is not positive");
+
 
 				}
+				$this->itemId = $newItemId;
 			}
 		}
 
