@@ -266,7 +266,67 @@
 				}
 				$this->itemId = $newItemId;
 			}
+		public function getItemDescription(){
+			return $this->itemDescription;
 		}
+		public function setItemDescription( string $newItemDescription): void{
+			$newItemDescription = trim($newItemDescription);
+			$newItemDescription = filter_var($newItemDescription, FILTER_SANITIZE_EMAIL,FILTER_FLAG_NO_ENCODE_QUOTES);
+
+			if ($newItemDescription===null){
+				$this->itemDescription = null
+					return;
+			}
+			if (empty($newitemDescription)=== true){
+				throw(new \InvalidArgumentException(" the item description is empty"))
+			}
+			if (strlen($newShopName) > 268 ){
+				throw(new \RangeException("the description is too large");
+			}
+		}
+
+		public function getItemPrice(){
+			return $this->itemPrice;
+		}
+		public function setItemPrice(float $newItemPrice): void {
+		$newItemPrice=filter_var($newItemPrice, FILTER_SANITIZE_NUMBER_FLOAT,FILTER_FLAG_NO_ENCODE_QUOTES);
+
+		if ($newItemPrice===null){
+			$this->itemPrice =null
+				return;
+		}
+
+		if (empty($newItemPrice) === true){
+			throw(new \InvalidArgumentException(("this Item is empty"));
+		}
+
+		if ($newItemPrice<=0){
+			throw(new \RangeException("this price is not positive"));
+		if( strlen($newItemPrice)>12){
+			throw(new \RangeException("itemPrice is too much"))
+		}
+		$this->itemPrice = $newItemPrice;
+		}
+
+		}
+
+		public function getItemShopId{
+			return $this->itemShopId;
+		}
+		public function setItemShopId(?int $newItemShopId): void{
+			if ($newItemShopId=== null){
+				$this->itemId = null
+					return;
+			}
+			if($newItemShopId<=0){
+				throw(new \RangeException("this shop Id is not positive"));
+
+			}
+			$this->itemShopId = $newItemShopId;
+		}
+
+		}
+
 
 
 
