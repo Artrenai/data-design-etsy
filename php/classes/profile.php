@@ -105,8 +105,32 @@
 		public function getProfileSalt(): string{
 			return $this->profileSalt;
 		}
+		public function setProfileSalt(string $newProfileSalt): void{
+			$newProfileSalt = trim($newProfileSalt);
+			$newProfileSalt = strtolower($newProfileSalt);
+			if(!ctype_xdigit($newProfileSalt)){
+				throw(new\InvalidArgumentException("profile password salt is insecure"));
+			}
+			if(strlen($newProfileSalt) !== 64){
+				throw(new \InvalidArgumentException("profile password salt must be 128 characters"));
+			}
+			$this->profileSalt = $newProfileSalt;
+		}
+
 		public function getProfileUsername():string{
 			return $this->profileUsername;
+			}
+		public function setProfileUsername(string $newProfileUsername): void{
+			$newProfileUsername = trim($newProfileUsername);
+			$newProfileUsername = filter_var($newProfileUsername, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES );
+			if(empty($newProfileUsername) === true){
+				throw(new\InvalidArgumentException("Username is empty"));
+			}
+			if(strlen($newProfileUsername)> 32){
+				throw(new\RangeException("Username too big"));
+			}
+			$this->profileUsername;
+
 		}
 
 
@@ -166,8 +190,47 @@
 			}
 			$this->shopId = $newShopId;
 		}
+		public function getShopEmail(): string{
+			return $this->shopEmail;
+		}
 
+		public function setShopEmail(string $newShopEmail): void{
+			$newShopEmail = trim ($newShopEmail);
+			$newShopEmail = filter_var($newShopEmail, FILTER_VALIDATE_EMAIL);
+			if(empty($newShopEmail)===true){
+				throw(new \InvalidArgumentException("email is empty"));
+			}
+			if(strlen($newShopEmail) > 128)){
+				throw(new\RangeException(" email is too large"));
+			}
+			$this->shopEmail = $newShopEmail;
+		}
+
+		public function getShopName(): string{
+			return $this->shopName;
+			}
+		public function setShopName($newShopName): void {
+			$newShopName = trim($newShopName);
+			$newShopName= filter_var($newShopName, FILTER_SANITIZE_STRING,FILTER_FLAG_NO_ENCODE_QUOTES);
+			if(empty($newShopName)=== true){
+				throw(new \InvalidArgumentException("shop name is empty"));
+			}
+			if(strlen($newShopName) > 32){
+				throw(new \RangeException("Shop Name too large"));
+			}
+			$this->shopName=$newShopName;
+		}
+		public function getShopProfileId(): int{
+			return $this->shopProfileId;
+		}
+		public function setShopProfileId(intShopProfileId) : void{
+			if($newShopProfileId = 0){
+				throw(new \RangeException("shopProfileId is not positive"));
+			}
+			$this->shopProfileId = $newShopProfileId;
+		}
 	}
+
 
 	Class Item implements \JsonSerializable {
 		use ValidateDate;
